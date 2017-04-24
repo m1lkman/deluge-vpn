@@ -3,7 +3,7 @@ SRC_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$SRC_DIR" ]]; then SRC_DIR="$PWD"; fi
 source "$SRC_DIR/vpn_base.sh"
 
-VPN_IP=`get_nic_ip $VPNIF`
+VPN_IP=$ifconfig_local
 
 # Remove old table
 ip route flush table $TABLE_ID
